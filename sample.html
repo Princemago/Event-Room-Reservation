@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Show/Hide Content</title>
+  <style>
+    #hiddenContent {
+      display: none; /* Initially hide the content */
+    }
+  </style>
+</head>
+<body>
+
+  <button onclick="toggleContent()">Toggle Content</button>
+
+  <div id="hiddenContent">
+    <!-- Your content goes here -->
+    <p>This is the hidden content that will be shown/hidden.</p>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD Table</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    table, th, td {
+      border: 1px solid black;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+
+    #addBtn {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>CRUD Table</h2>
+  
+  <button id="addBtn" onclick="addRow()">Add Row</button>
+
+  <table id="crudTable">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Rows will be added dynamically here -->
+    </tbody>
+  </table>
+
+  <script>
+    // Sample data (you can replace this with your data)
+    var data = [
+      { id: 1, name: 'John Doe', email: 'john@example.com' },
+      { id: 2, name: 'Jane Doe', email: 'jane@example.com' }
+    ];
+
+    function renderTable() {
+      var tableBody = document.getElementById('crudTable').getElementsByTagName('tbody')[0];
+      tableBody.innerHTML = '';
+
+      data.forEach(function(item) {
+        var row = tableBody.insertRow();
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+
+        cell1.innerHTML = item.id;
+        cell2.innerHTML = item.name;
+        cell3.innerHTML = item.email;
+        cell4.innerHTML = '<button onclick="editRow(' + item.id + ')">Edit</button> | <button onclick="deleteRow(' + item.id + ')">Delete</button>';
+      });
+    }
+
+    function addRow() {
+      // Get user input (you can use a form for this)
+      var id = data.length + 1; // Replace with a proper ID generation logic
+      var name = prompt('Enter name:');
+      var email = prompt('Enter email:');
+
+      // Add the new data to the array
+      data.push({ id: id, name: name, email: email });
+
+      // Update the table
+      renderTable();
+    }
+
+    function editRow(id) {
+      // Get the index of the item in the array
+      var index = data.findIndex(function(item) {
+        return item.id === id;
+      });
+
+      // Get user input (you can use a form for this)
+      var newName = prompt('Enter new name:', data[index].name);
+      var newEmail = prompt('Enter new email:', data[index].email);
+
+      // Update the data in the array
+      data[index].name = newName;
+      data[index].email = newEmail;
+
+      // Update the table
+      renderTable();
+    }
+
+    function deleteRow(id) {
+      // Filter out the item with the specified ID
+      data = data.filter(function(item) {
+        return item.id !== id;
+      });
+
+      // Update the table
+      renderTable();
+    }
+
+    // Initial rendering of the table
+    renderTable();
+  </script>
+
+</body>
+</html>
+  </div>
+
+  <script>
+    function toggleContent() {
+      var content = document.getElementById("hiddenContent");
+      if (content.style.display === "none") {
+        content.style.display = "block";
+      } else {
+        content.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>

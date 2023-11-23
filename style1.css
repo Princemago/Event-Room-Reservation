@@ -1,0 +1,150 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+
+*{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+  }
+body{
+    display: flex;
+  }
+.container{
+    position: sticky;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 110px;
+    height: 100vh;
+    padding: 0 1.7rem;
+    color: white;
+    overflow: hidden;
+    transition: all 0.5s linear;
+    background: red;
+  }
+.dashboard{
+  font-size: 18px;
+}
+.container:hover{
+  width: 240px;
+  transition: 0.5s;
+}
+.container .icon{
+  height: 80px;
+  padding: 16px;
+}
+.navigation{
+  height: 88%;
+  position: relative;
+  list-style: none;
+  padding: 0;
+}
+.navigation li{
+  padding: 1rem;
+  margin: 8px 0;
+  border-radius: 8px;
+  transition: all 0.5s ease-in-out;
+}
+.navigation li:hover, .active{
+  background: rgba(128, 128, 128, 0.595);
+}
+.navigation a{
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.navigation a span{
+  overflow: hidden;
+}
+.navigation a i{
+  font-size: 1.2rem;
+}
+.logout{
+  position: absolute;
+  bottom:0;
+  left:0;
+  width: 100%;
+}
+/*----------------main--------------------*/
+.main-content{
+  position: relative;
+  background: whitesmoke;
+  width: 100%;
+  padding: 1rem;
+}
+.header-wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background: white;
+  border-radius: 10px;
+  padding: 10px 2rem;
+  margin-bottom: 1rem;
+}
+.user-info{
+  display: flex;
+  align-items: center;
+  gap: 1;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+/* Form styling */
+form {
+  max-width: 500px;
+  margin: 20px 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+select, input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Additional styling for hidden content */
+#hiddenContent {
+  margin-top: 20px;
+}
